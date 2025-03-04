@@ -26,7 +26,7 @@ const SinglePost = () =>{
             Torna indietro
         </button>
 
-        <button className="btn btn-primary" onClick={() => navigate (`/list/${Number(id)+1}`)}> {/* Avrei potuto usare anche parseInt() */}
+        <button className="btn btn-primary" onClick={() => Number (id)<5 ? (navigate (`/list/${Number(id)+1}`)): null}> {/* Avrei potuto usare anche parseInt() */}
             Vai avanti
         </button>
         
