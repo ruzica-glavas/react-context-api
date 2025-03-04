@@ -12,13 +12,13 @@ import SinglePost from "./pages/posts/SinglePost"
 import DefaultLayout from "./layouts/DefaultLayout"
 
 //import context
-import GlobalContext from "./contexts/GlobalContext"
+import {GlobalProvider} from "./contexts/GlobalContext"
 
 function App() {
 
   return (
     <>
-    <GlobalContext.Provider>
+    <GlobalProvider>
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
@@ -29,7 +29,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </GlobalContext.Provider>
+    </GlobalProvider>
     
      
     </>

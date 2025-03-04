@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
+
+
+//import context
+import {useGlobalContext} from "../../contexts/GlobalContext";
 
 const SinglePost = () =>{
     
     const {id} = useParams()
 
-    const [post, setPost] = useState ({})
+    const {post, singlePost} = useGlobalContext ()
 
     useEffect (()=>{
-        axios
-        .get (`http://localhost:3000/posts/${id}`)
-        .then ((res) => setPost(res.data))
-        .catch (err => console.error(err));
+        singlePost (id)
     }, [id]);
 
     const navigate = useNavigate()
