@@ -11,20 +11,26 @@ import SinglePost from "./pages/posts/SinglePost"
 //import layouts
 import DefaultLayout from "./layouts/DefaultLayout"
 
+//import context
+import GlobalContext from "./contexts/GlobalContext"
+
 function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route Component={DefaultLayout}>
-          <Route path="/" Component={HomePage} />
-          <Route path="/info" Component={ChiSiamo} />
-          <Route path="/list" Component={ListaPost} />
-          <Route path="/list/:id" Component={SinglePost} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <GlobalContext.Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefaultLayout}>
+            <Route path="/" Component={HomePage} />
+            <Route path="/info" Component={ChiSiamo} />
+            <Route path="/list" Component={ListaPost} />
+            <Route path="/list/:id" Component={SinglePost} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </GlobalContext.Provider>
+    
      
     </>
   )
